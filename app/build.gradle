@@ -31,6 +31,7 @@ dependencies {
     compile 'com.android.support:recyclerview-v7:25.0.1'
     // Cupboard
     compile 'nl.qbusict:cupboard:2.1.4'
+    compile 'nl.qbusict:cupboard:2.2.0'
     // Stetho
     compile 'com.facebook.stetho:stetho:1.4.1'
 }

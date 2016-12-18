@@ -1,30 +1,20 @@
 package com.example.asiagibson.redoeasteregg;
 
 /**
- * Created by asiagibson on 12/14/16.
+ * Created by Nesada on 12/12/2016.
  */
-
 public class Turtle {
 
-    public Turtle(){
-        this.name ="unknown";
+    public String name;
+    public byte[] image;
+
+    public Turtle() {
+        this.name = "noName";
+        this.image = null;
     }
 
-    private Long _id;
-
-    private String name;
-
-    public Long getId(){
-        return _id;
-    }
-
-    public String getName(){
-        return name;
-    }
-
-    public void setName(String name){
+    public Turtle(String name, byte[] image) {
         this.name = name;
+        this.image = image;
     }
-
-
 }
