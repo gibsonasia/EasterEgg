@@ -62,14 +62,14 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-              //  cancelNotification();
+             
                 SetupDB setupDB = new SetupDB(MainActivity.this);
                 SQLiteDatabase db = setupDB.getReadableDatabase();
 
-                // Get the cursor for this query
+               
                 Cursor bunnies = cupboard().withDatabase(db).query(Turtle.class).getCursor();
                 try {
-                    // Iterate Bunnys
+               
                     QueryResultIterable<Turtle> itr = cupboard().withCursor(bunnies).iterate(Turtle.class);
 
                     String a= "";
@@ -78,39 +78,18 @@ public class MainActivity extends AppCompatActivity {
                        mTv.setText(a);
                     }
                 } finally {
-                    // close the cursor
+                    
                     bunnies.close();
                 }
 
 
 
 
-//                SetupDB setupDB = new SetupDB(MainActivity.this);
-//                SQLiteDatabase db = setupDB.getReadableDatabase();
-//        String menu[] = {"name", "image"};
-//        Cursor c = db.query("Turtle", menu, null, null, null, null, null);
-//        c.moveToLast();
-//       // Log.e("TESTNOW", c.getString(2) + "");
-//        mTv.setText(c.getString(0));
+//               
             }
         });
 
-//
-//        ContentValues values = new ContentValues(); // this contents the values for one row
-//        values.put("id", "2");
-//        values.put("name", "Artan");
-//        values.put("lastname", "Elezaj");
-//
-//       long numRow = db.insert("tableName", null, values);
-//
-//        Log.e("TESTNOW", numRow + "");
 
-//        SQLiteDatabase db = setupDB.getReadableDatabase();
-//        String menu[] = {"id", "name", "lastname"};
-//        Cursor c = db.query("tableName", menu, null, null, null, null, null);
-//        c.moveToLast();
-//       // Log.e("TESTNOW", c.getString(2) + "");
-//        mTv.setText(c.getString(0));
         scheduleNotification();
     }
 
@@ -126,7 +105,7 @@ public class MainActivity extends AppCompatActivity {
 
         AlarmManager alarmManager = getSystemService();
 
-//        alarmManager.setInexactRepeating(AlarmManager.RTC_WAKEUP, cal.getTimeInMillis(), AlarmManager.INTERVAL_FIFTEEN_MINUTES, pendingIntent);
+        
         alarmManager.setRepeating(AlarmManager.ELAPSED_REALTIME_WAKEUP, SystemClock.elapsedRealtime(), 2*60*1000, pendingIntent);
     }
 
